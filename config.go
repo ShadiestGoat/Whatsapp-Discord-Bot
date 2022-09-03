@@ -17,7 +17,7 @@ var (
 	TOKEN         = ""
 	GUILD_CHANNEL = ""
 	GUILD_ROLE    = ""
-	CHAT_NAME	  = ""
+	CHAT_NAME     = ""
 )
 
 func ConfigInit() {
@@ -33,11 +33,11 @@ func ConfigInit() {
 			PanicIfNone: true,
 		},
 		"GUILD_ROLE": {
-			Res: &GUILD_ROLE,
+			Res:         &GUILD_ROLE,
 			PanicIfNone: true,
 		},
 		"CHAT_NAME": {
-			Res: &CHAT_NAME,
+			Res:         &CHAT_NAME,
 			PanicIfNone: true,
 		},
 	}

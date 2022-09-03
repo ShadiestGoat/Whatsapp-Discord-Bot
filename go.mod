@@ -1,4 +1,4 @@
-module shadygoat.eu/WhatsappBot
+module github.com/ShadiestGoat/Whatsapp-Discord-Bot
 
 go 1.19
 

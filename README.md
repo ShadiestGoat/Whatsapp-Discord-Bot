@@ -25,5 +25,10 @@ The bot currently supports the following message types:
 
 To make this work, youll have to setup golang, then run the following:
 
+```sh
+go install github.com/ShadiestGoat/Whatsapp-Discord-Bot@latest
 ```
-go install 
+
+After installing, create a `.env` file as described above, and you will be able to run this correctly. Please do note, that this software will create a `deviceStore.db` file in the current directory & it is highly advised to not leak that. 
+
+If it can't auto login, you will be prompted with a qr code through your terminal. Scan it using whatsapp mobile
