@@ -15,7 +15,6 @@ type confItem struct {
 
 var (
 	TOKEN         = ""
-	GUILD_ID      = ""
 	GUILD_CHANNEL = ""
 	GUILD_ROLE    = ""
 	CHAT_NAME	  = ""
@@ -27,10 +26,6 @@ func ConfigInit() {
 	var confMap = map[string]confItem{
 		"TOKEN": {
 			Res:         &TOKEN,
-			PanicIfNone: true,
-		},
-		"GUILD_ID": {
-			Res:         &GUILD_ID,
 			PanicIfNone: true,
 		},
 		"GUILD_CHANNEL": {
