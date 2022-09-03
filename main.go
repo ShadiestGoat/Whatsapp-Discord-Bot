@@ -5,9 +5,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"mime"
 	"os"
 	"os/signal"
-	"strings"
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
@@ -30,10 +30,25 @@ func Organize(m whatsmeow.DownloadableMessage, mType string) []*discordgo.File {
 		mType = "text/plain"
 	}
 
-	ext := strings.Split(mType, "/")[1]
+	ext := ""
+	
+	exts, _ := mime.ExtensionsByType(mType)
+    
+    if exts == nil {
+        ext = ".txt"
+    } else if len(exts) == 0 {
+        ext = ".txt"
+    } else if mType == "image/jpeg" {
+        ext = ".jpeg"
+	} else if mType == "video/mp4" {
+		ext = ".mp4"
+    } else {
+        ext = exts[0]
+    }
 
-	if mType == "text/plain" {
-		ext = "txt"
+	if mType == "text/plain" || ext == "" {
+		mType = "text/plain"
+		ext = ".txt"
 	}
 
 	name := "attach." + ext
