@@ -110,8 +110,9 @@ func eventHandler(evt interface{}) {
 			fmt.Println("chat", string(b))
 		}
 
-		if content == "" && files == nil {
-			content = "Message type not supported!"
+		if content == "" && len(files) == 0 {
+			fmt.Printf("%#v\n", v.Message)
+			return
 		}
 
 		content = "||<@&" + GUILD_ROLE + ">|| " + content
